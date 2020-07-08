@@ -1,8 +1,8 @@
 /**
- * ÏîÄ¿Ãû³Æ:ĞŞ¸ÄÎÄ¼şÃû
- * ÎÄ¼şËµÃ÷: Ö÷·½·¨
- * ´´½¨Õß: chenh
- * ´´½¨ÈÕÆÚ: 2016-7-1
+ * é¡¹ç›®åç§°:ä¿®æ”¹æ–‡ä»¶å
+ * æ–‡ä»¶è¯´æ˜: ä¸»æ–¹æ³•
+ * åˆ›å»ºè€…: chenh
+ * åˆ›å»ºæ—¥æœŸ: 2016-7-1
  */
 package com.gin.main;
 
@@ -11,7 +11,7 @@ import com.gin.ui.JFrameDemo;
 public class Main extends Thread {
 
 	/**
-	 * Ö÷º¯Êı
+	 * ä¸»å‡½æ•°
 	 */
 	public static void main(String[] args) {
 		new Main("updateFileName").start(); }

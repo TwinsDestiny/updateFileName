@@ -1,8 +1,8 @@
 /**
- * ÏîÄ¿Ãû³Æ:ĞŞ¸ÄÎÄ¼şÃû
- * ÎÄ¼şËµÃ÷: ·şÎñ²ã
- * ´´½¨Õß: chenh
- * ´´½¨ÈÕÆÚ: 2016-7-1
+ * é¡¹ç›®åç§°:ä¿®æ”¹æ–‡ä»¶å
+ * æ–‡ä»¶è¯´æ˜: æœåŠ¡å±‚
+ * åˆ›å»ºè€…: chenh
+ * åˆ›å»ºæ—¥æœŸ: 2016-7-1
  */
 package com.gin.service;
 
@@ -16,32 +16,32 @@ import java.util.List;
 public class UpdateFileName {
 	
 	/**
-	 * »ñÈ¡ËùÓĞÎÄ¼ş
+	 * è·å–æ‰€æœ‰æ–‡ä»¶
 	 */
 	public HashMap getFileMap() {
 		return getAllFileStr();
 	}
 
 	/**
-	 * »ñÈ¡µ±Ç°ÎÄ¼ş¼ĞËùÓĞÎÄ¼ş
+	 * è·å–å½“å‰æ–‡ä»¶å¤¹æ‰€æœ‰æ–‡ä»¶
 	 */
 	private HashMap getAllFileStr(){
 		HashMap result = new HashMap();
 		String filePath = System.getProperty("java.class.path");
 		URL url = UpdateFileName.class.getProtectionDomain().getCodeSource().getLocation();
 		try {
-		    filePath = URLDecoder.decode(url.getPath(), "utf-8");// ×ª»¯Îªutf-8±àÂë£¬Ö§³ÖÖĞÎÄ
+		    filePath = URLDecoder.decode(url.getPath(), "utf-8");// è½¬åŒ–ä¸ºutf-8ç¼–ç ï¼Œæ”¯æŒä¸­æ–‡
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}
-		if (filePath.endsWith(".jar")) {// ¿ÉÖ´ĞĞjar°üÔËĞĞµÄ½á¹ûÀï°üº¬".jar"
-		    // »ñÈ¡jar°üËùÔÚÄ¿Â¼
+		if (filePath.endsWith(".jar")) {// å¯æ‰§è¡ŒjaråŒ…è¿è¡Œçš„ç»“æœé‡ŒåŒ…å«".jar"
+		    // è·å–jaråŒ…æ‰€åœ¨ç›®å½•
 		    filePath = filePath.substring(0, filePath.lastIndexOf("/") + 1);
 		}
 
 		File file = new File(filePath);
-		filePath = file.getAbsolutePath();//µÃµ½windowsÏÂµÄÕıÈ·Â·¾¶
-		System.out.println("jar°üËùÔÚÄ¿Â¼£º"+filePath);
+		filePath = file.getAbsolutePath();//å¾—åˆ°windowsä¸‹çš„æ­£ç¡®è·¯å¾„
+		System.out.println("jaråŒ…æ‰€åœ¨ç›®å½•ï¼š"+filePath);
 		List list = this.traverseFolder2(filePath);
 		result.put("FILELIST", list);
 		result.put("JARPATH", filePath);
@@ -50,7 +50,7 @@ public class UpdateFileName {
 	
     
     /**
-     * Ë¢³öÎÄ¼şÂ·¾¶
+     * åˆ·å‡ºæ–‡ä»¶è·¯å¾„
      * @param path
      */
 	public List traverseFolder2(String path) {
@@ -59,24 +59,24 @@ public class UpdateFileName {
         if (file.exists()) {
             File[] files = file.listFiles();
             if (files.length == 0) {
-                System.out.println("ÎÄ¼ş¼ĞÊÇ¿ÕµÄ!");
+                System.out.println("æ–‡ä»¶å¤¹æ˜¯ç©ºçš„!");
                 return list;
             } else {
                 for (File file2 : files) {
                     if (!file2.isDirectory()) {
-                    	System.out.println("ÎÄ¼ş:" + file2.getAbsolutePath());
+                    	System.out.println("æ–‡ä»¶:" + file2.getAbsolutePath());
                     	list.add(file2.getAbsolutePath());
                     }
                 }
             }
         } else {
-            System.out.println("ÎÄ¼ş²»´æÔÚ!");
+            System.out.println("æ–‡ä»¶ä¸å­˜åœ¨!");
         }
         return list;
     }
 	
 	/*
-	 * ¸üĞÂÎÄ¼şÃû
+	 * æ›´æ–°æ–‡ä»¶å
 	 */
 	public void updateFileName(String name1, String name2, List list){
 		List list1 = new ArrayList();
@@ -99,9 +99,9 @@ public class UpdateFileName {
 			File f = new File(filename2);
 			File mm = new File(fileNameFirst + fileNameLast);
 			if (f.renameTo(mm)) {
-				System.out.println("ĞŞ¸Ä³É¹¦!");
+				System.out.println("ä¿®æ”¹æˆåŠŸ!");
 			} else {
-				System.out.println("ĞŞ¸ÄÊ§°Ü");
+				System.out.println("ä¿®æ”¹å¤±è´¥");
 			}
 		}
 	}

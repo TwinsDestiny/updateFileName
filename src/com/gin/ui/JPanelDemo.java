@@ -1,8 +1,8 @@
 /**
- * ÏîÄ¿Ãû³Æ:ĞŞ¸ÄÎÄ¼şÃû
- * ÎÄ¼şËµÃ÷: UI²ã
- * ´´½¨Õß: chenh
- * ´´½¨ÈÕÆÚ: 2016-7-1
+ * é¡¹ç›®åç§°:ä¿®æ”¹æ–‡ä»¶å
+ * æ–‡ä»¶è¯´æ˜: UIå±‚
+ * åˆ›å»ºè€…: chenh
+ * åˆ›å»ºæ—¥æœŸ: 2016-7-1
  */
 package com.gin.ui;
 
@@ -15,11 +15,11 @@ import javax.swing.JPanel;
 public class JPanelDemo extends JPanel {
 	
 	/**
-	 * »æÖÆ×Ö·û´®
+	 * ç»˜åˆ¶å­—ç¬¦ä¸²
 	 */
 	private void drawText(Graphics g) {
 		g.setColor(Color.BLACK);
-		g.setFont(new Font("ËÎÌå",Font.PLAIN , 14));
+		g.setFont(new Font("å®‹ä½“",Font.PLAIN , 14));
 		g.drawString("aaaa", 0, 14);
 	}
 

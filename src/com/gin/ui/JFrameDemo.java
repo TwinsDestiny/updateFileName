@@ -1,8 +1,8 @@
 /**
- * ÏîÄ¿Ãû³Æ:ĞŞ¸ÄÎÄ¼şÃû
- * ÎÄ¼şËµÃ÷: UI²ã
- * ´´½¨Õß: chenh
- * ´´½¨ÈÕÆÚ: 2016-7-1
+ * é¡¹ç›®åç§°:ä¿®æ”¹æ–‡ä»¶å
+ * æ–‡ä»¶è¯´æ˜: UIå±‚
+ * åˆ›å»ºè€…: chenh
+ * åˆ›å»ºæ—¥æœŸ: 2016-7-1
  */
 package com.gin.ui;
 
@@ -25,7 +25,7 @@ import com.gin.service.UpdateFileName;
 
 public class JFrameDemo extends JFrame {
 
-	//ĞŞ¸ÄÎÄ¼şÃûservice
+	//ä¿®æ”¹æ–‡ä»¶åservice
 	UpdateFileName up = new UpdateFileName();
 	
 	public JFrameDemo() {
@@ -36,34 +36,34 @@ public class JFrameDemo extends JFrame {
 		for (int i = 0; i < fileList.size(); i++) {
 			fileStr += fileList.get(i).toString()+"\n";
 		}
-		// ÉèÖÃ±êÌâ
-		setTitle("ĞŞ¸ÄÎÄ¼şÃû");
-		// ÉèÖÃ¹Ø±Õ´°¿Ú
+		// è®¾ç½®æ ‡é¢˜
+		setTitle("ä¿®æ”¹æ–‡ä»¶å");
+		// è®¾ç½®å…³é—­çª—å£
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// ÉèÖÃ´°¿Ú´óĞ¡
+		// è®¾ç½®çª—å£å¤§å°
 		setSize(487, 580);
-		// ²»ÔÊĞíÓÃ»§¸Ä±ä´°¿Ú´óĞ¡
+		// ä¸å…è®¸ç”¨æˆ·æ”¹å˜çª—å£å¤§å°
 		setResizable(false);
-		// ¾ÓÖĞ
+		// å±…ä¸­
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		Dimension screen = toolkit.getScreenSize();
 		int x = screen.width - this.getWidth() >> 1;
 		int y = (screen.height - this.getHeight() >> 1) - 20;
 		this.setLocation(x, y);
-		// ´´½¨Ò»¸öJPanelµÄÊµÀı
+		// åˆ›å»ºä¸€ä¸ªJPanelçš„å®ä¾‹
 		final JPanelDemo panel = new JPanelDemo();
-		// ÉèÖÃÎŞ²¼¾Ö
+		// è®¾ç½®æ— å¸ƒå±€
 		panel.setLayout(null);
-		// Ìí¼ÓPanel
+		// æ·»åŠ Panel
 		setContentPane(panel);
 		
-		/*******************½çÃæ********************/
-		JLabel label1 = new JLabel("Ô­ÎÄ¼şºó×º£º");
-		JLabel label2 = new JLabel("¸ÄÎÄ¼şºó×º£º");
+		/*******************ç•Œé¢********************/
+		JLabel label1 = new JLabel("åŸæ–‡ä»¶åç¼€ï¼š");
+		JLabel label2 = new JLabel("æ”¹æ–‡ä»¶åç¼€ï¼š");
 		final JTextField textField1 = new JTextField();
 		final JTextField textField2 = new JTextField();
 		final JTextArea textArea1 = new JTextArea();
-		Font font1 = new Font("ËÎÌå",Font.PLAIN , 14); 
+		Font font1 = new Font("å®‹ä½“",Font.PLAIN , 14); 
 		label1.setFont(font1);
 		label2.setFont(font1);
 		label1.setBounds(10, 10, 100, 30);
@@ -74,9 +74,9 @@ public class JFrameDemo extends JFrame {
 		textField2.setBounds(120, 50, 200, 30);
 		textArea1.setBounds(10, 90, 460, 400);
 		textArea1.setText(fileStr);
-		textArea1.setLineWrap(true);        //¼¤»î×Ô¶¯»»ĞĞ¹¦ÄÜ 
-		JScrollPane scrollPane = new JScrollPane(textArea1);    //´´½¨¹ö¶¯Ìõ£¬ĞèÒªÖ¸¶¨Ìí¼ÓÎ»ÖÃ
-		//·Ö±ğÉèÖÃË®Æ½ºÍ´¹Ö±¹ö¶¯Ìõ×ÜÊÇ³öÏÖ   
+		textArea1.setLineWrap(true);        //æ¿€æ´»è‡ªåŠ¨æ¢è¡ŒåŠŸèƒ½ 
+		JScrollPane scrollPane = new JScrollPane(textArea1);    //åˆ›å»ºæ»šåŠ¨æ¡ï¼Œéœ€è¦æŒ‡å®šæ·»åŠ ä½ç½®
+		//åˆ†åˆ«è®¾ç½®æ°´å¹³å’Œå‚ç›´æ»šåŠ¨æ¡æ€»æ˜¯å‡ºç°   
 		scrollPane.setHorizontalScrollBarPolicy(   
 		JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);   
 		scrollPane.setVerticalScrollBarPolicy(   
@@ -89,20 +89,20 @@ public class JFrameDemo extends JFrame {
 		panel.add(scrollPane);
 		/*******************************************/
 		
-		/***************¸üĞÂÎÄ¼şÃû**********************/
-		// ´´½¨JButtonÊµÀı
-		JButton buttonNext = new JButton("¸üĞÂÎÄ¼şÃû");
-		// ÉèÖÃ°´Å¥Î»ÖÃ
+		/***************æ›´æ–°æ–‡ä»¶å**********************/
+		// åˆ›å»ºJButtonå®ä¾‹
+		JButton buttonNext = new JButton("æ›´æ–°æ–‡ä»¶å");
+		// è®¾ç½®æŒ‰é’®ä½ç½®
 		buttonNext.setBounds(190, 500, 100, 30);
-		// ½«JButtonÊµÀıÌí¼Óµ½JPanelÖĞ
+		// å°†JButtonå®ä¾‹æ·»åŠ åˆ°JPanelä¸­
 		panel.add(buttonNext);
-		// Ìí¼Ó°´Å¥¼àÌıÆ÷
+		// æ·»åŠ æŒ‰é’®ç›‘å¬å™¨
 		buttonNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String str1 = textField1.getText();
 				String str2 = textField2.getText();
 				up.updateFileName(str1, str2, fileList);
-				textArea1.append("¸üĞÂÍê³É");
+				textArea1.append("æ›´æ–°å®Œæˆ");
 			}
 		});
 		/*******************************************/
